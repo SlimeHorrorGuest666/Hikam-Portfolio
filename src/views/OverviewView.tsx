@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TabId } from '../types.ts';
+import { GitHubCalendar } from '../components/GitHubCalendar.tsx';
 
 interface OverviewViewProps {
   onNavigate: (tab: TabId) => void;
@@ -397,6 +398,29 @@ export const OverviewView: React.FC<OverviewViewProps> = ({ onNavigate }) => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* GITHUB CONTRIBUTION ACTIVITY SECTION (D3.JS) */}
+          <div className="flex flex-col gap-space-sm pt-space-lg">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-space-xs">
+              <div>
+                <div className="flex items-center gap-space-xs text-secondary font-label-mono-sm text-label-mono-sm uppercase tracking-widest">
+                  <span className="material-symbols-outlined text-[16px]">monitoring</span>
+                  CONTINUOUS DEPLOYMENT &amp; COMMITS
+                </div>
+                <h2 className="font-headline-xl text-headline-xl text-primary">
+                  Coding Activity &amp; Git Rhythm
+                </h2>
+              </div>
+              <button
+                onClick={() => onNavigate('skills-and-tech-stack')}
+                className="font-label-mono-sm text-label-mono-sm text-primary-container hover:underline flex items-center gap-1 cursor-pointer w-fit"
+              >
+                <span>View Full Tech Stack Rigs</span>
+                <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+              </button>
+            </div>
+            <GitHubCalendar username="SlimeHorrorGuest666" />
           </div>
 
           {/* INTERACTIVE DEBUG CONSOLE / CONTACT TERMINAL */}

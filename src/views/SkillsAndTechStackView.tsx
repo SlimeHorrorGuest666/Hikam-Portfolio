@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TabId } from '../types.ts';
+import { GitHubCalendar } from '../components/GitHubCalendar.tsx';
 
 interface SkillsAndTechStackViewProps {
   onNavigate: (tab: TabId) => void;
@@ -480,6 +481,25 @@ export const SkillsAndTechStackView: React.FC<SkillsAndTechStackViewProps> = ({ 
                 </div>
               </div>
             </div>
+          </section>
+
+          {/* SECTION 4.5: Open Source & GitHub Contribution Heatmap (D3.js) */}
+          <section className="flex flex-col gap-space-md">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-space-xs">
+                <span className="px-space-sm py-space-xs bg-surface-container text-primary font-label-mono-sm text-label-mono-sm rounded">
+                  02.5 // CODE ACTIVITY
+                </span>
+                <h2 className="font-headline-lg text-headline-lg text-primary uppercase">
+                  GitHub Contribution Calendar &amp; Cadence
+                </h2>
+              </div>
+              <span className="font-label-mono-sm text-label-mono-sm text-secondary hidden sm:inline">
+                D3.JS DATA-DRIVEN MATRIX
+              </span>
+            </div>
+
+            <GitHubCalendar username="SlimeHorrorGuest666" />
           </section>
 
           {/* SECTION 5: PPLG Vocational Curriculum Mastery (SMK Negeri 6 Surakarta) */}
