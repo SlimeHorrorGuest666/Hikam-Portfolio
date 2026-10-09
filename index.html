@@ -15,6 +15,18 @@
   </head>
   <body class="bg-[#101418] text-[#e0e3e8] selection:bg-[#00ff9d] selection:text-[#007143] antialiased">
     <div id="root"></div>
+    <script>
+      // Fallback: If deployed directly on GitHub Pages root without build pipeline, redirect to pre-built /docs/
+      if (
+        typeof window !== 'undefined' &&
+        window.location.hostname.endsWith('github.io') &&
+        !window.location.pathname.includes('/docs') &&
+        !window.location.pathname.includes('/dist')
+      ) {
+        const repoPath = window.location.pathname.replace(/\/+$/, '');
+        window.location.replace(repoPath + '/docs/' + window.location.hash);
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
